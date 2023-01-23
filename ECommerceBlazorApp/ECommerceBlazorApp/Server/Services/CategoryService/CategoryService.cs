@@ -1,23 +1,26 @@
-﻿using ECommerceBlazorApp.Shared;
+﻿using ECommerceBlazorApp.Server.Data;
+using ECommerceBlazorApp.Shared;
+using Microsoft.EntityFrameworkCore;
 
 namespace ECommerceBlazorApp.Server.Services.CategoryService
 {
     public class CategoryService : ICategoryService
     {
-        public List<Category> Categories { get; set; } = new List<Category> {
-                new Category { Id = 1, Name = "Books", Url = "books", Icon = "book"},
-                new Category { Id = 2, Name = "Electronics", Url = "electronics", Icon = "camera-slr"},
-                new Category { Id = 3, Name = "Video Games", Url = "video-games", Icon = "aperture"}
-            };
+        private readonly DataContext _context;
+
+        public CategoryService(DataContext context)
+        {
+            _context = context;
+        }
 
         public async Task<List<Category>> GetCategories()
         {
-            return Categories;
+            return await _context.Categories.ToListAsync();
         }
 
         public async Task<Category> GetCategoryByUrl(string categoryurl)
         {
-            return Categories.FirstOrDefault(c => c.Url.ToLower().Equals(categoryurl.ToLower()));
+            return await _context.Categories.FirstOrDefaultAsync(c => c.Url.ToLower().Equals(categoryurl.ToLower()));
         }
     }
 }
