@@ -6,6 +6,6 @@ namespace ECommerceBlazorApp.Client.Services.CategoryService
     {
         public List<Category> Categories { get; set; }
 
-        void LoadCategories();
+        public Task GetCategories();
     }
 }
