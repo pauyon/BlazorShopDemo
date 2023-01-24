@@ -30,7 +30,8 @@ namespace ECommerceBlazorApp.Server.Data
                     Description = "Jedi Knight takes place in the year 5 ABY, one year after Return of the Jedi and four years after Dark Forces.",
                     Image = "./images/jedi-knight-cover.jpg",
                     Price = 9.99m,
-                    OriginalPrice = 10.00m
+                    OriginalPrice = 10.00m,
+                    DateCreated = new DateTime(2023, 1, 1)
                 },
                 new Product
                 {
@@ -40,7 +41,8 @@ namespace ECommerceBlazorApp.Server.Data
                     Description = "Explore procedurally generated 3D world with virtually infinite terrain and may discover and extract raw materials, craft tools and items, and build structures, earthworks, and machines.",
                     Image = "./images/minecraft-cover.jpg",
                     Price = 8.19m,
-                    OriginalPrice = 29.99m
+                    OriginalPrice = 29.99m,
+                    DateCreated = new DateTime(2023, 1, 1)
                 },
                 new Product
                 {
@@ -50,7 +52,8 @@ namespace ECommerceBlazorApp.Server.Data
                     Description = "Bundle of two Street Fighter games: Hyper Street Fighter II, and Street Fighter III: 3rd Strike.",
                     Image = "./images/street-fighter.jpg",
                     Price = 8.19m,
-                    OriginalPrice = 29.99m
+                    OriginalPrice = 29.99m,
+                    DateCreated = new DateTime(2023, 1, 1)
                 },
                 new Product
                 {
@@ -60,7 +63,8 @@ namespace ECommerceBlazorApp.Server.Data
                     Description = "An action role-playing game, the third main game in the Star Ocean series. The game was developed by tri-Ace and published by Square Enix for the PlayStation 2 console.",
                     Image = "./images/star-ocean-tteot.jpg",
                     Price = 8.19m,
-                    OriginalPrice = 29.99m
+                    OriginalPrice = 29.99m,
+                    DateCreated = new DateTime(2023, 1, 1)
                 },
                 new Product
                 {
@@ -70,7 +74,8 @@ namespace ECommerceBlazorApp.Server.Data
                     Description = "The game is a sequel to Kingdom Hearts, and like the original game, combines characters and settings from Disney films with those of Square Enix's Final Fantasy series.",
                     Image = "./images/kingdom-hearts-2.jpg",
                     Price = 8.19m,
-                    OriginalPrice = 29.99m
+                    OriginalPrice = 29.99m,
+                    DateCreated = new DateTime(2023, 1, 1)
                 },
                 new Product
                 {
@@ -80,7 +85,8 @@ namespace ECommerceBlazorApp.Server.Data
                     Description = "Nintendo handheld gaming console.",
                     Image = "./images/gbc.jpg",
                     Price = 80.00m,
-                    OriginalPrice = 110.00m
+                    OriginalPrice = 110.00m,
+                    DateCreated = new DateTime(2023, 1, 1)
                 },
                 new Product
                 {
@@ -90,7 +96,8 @@ namespace ECommerceBlazorApp.Server.Data
                     Description = "Nintendo gaming console.",
                     Image = "./images/snes.jpg",
                     Price = 8.19m,
-                    OriginalPrice = 29.99m
+                    OriginalPrice = 29.99m,
+                    DateCreated = new DateTime(2023, 1, 1)
                 },
                 new Product
                 {
@@ -100,7 +107,8 @@ namespace ECommerceBlazorApp.Server.Data
                     Description = "Vintage Canon film camera.",
                     Image = "./images/canon-ae-1.jpg",
                     Price = 150.00m,
-                    OriginalPrice = 200.00m
+                    OriginalPrice = 200.00m,
+                    DateCreated = new DateTime(2023, 1, 1)
                 },
                 new Product
                 {
@@ -110,7 +118,8 @@ namespace ECommerceBlazorApp.Server.Data
                     Description = "A book about minuscule changes to habits for big changes in your life.",
                     Image = "./images/atomic-habits.jpg",
                     Price = 9.99m,
-                    OriginalPrice = 19.99m
+                    OriginalPrice = 19.99m,
+                    DateCreated = new DateTime(2023, 1, 1)
                 },
                 new Product
                 {
@@ -120,7 +129,8 @@ namespace ECommerceBlazorApp.Server.Data
                     Description = "A book about minuscule changes to habits for big changes in your life.",
                     Image = "./images/the-subtle-art.jpg",
                     Price = 9.99m,
-                    OriginalPrice = 19.99m
+                    OriginalPrice = 19.99m,
+                    DateCreated = new DateTime(2023, 1, 1)
                 },
                 new Product
                 {
@@ -130,7 +140,8 @@ namespace ECommerceBlazorApp.Server.Data
                     Description = "A series of personal writings by Marcus Aurelius, Roman Emperor from AD 161 to 180, recording his private notes to himself and ideas on Stoic philosophy.",
                     Image = "./images/meditations.jpg",
                     Price = 11.99m,
-                    OriginalPrice = 19.99m
+                    OriginalPrice = 19.99m,
+                    DateCreated = new DateTime(2023, 1, 1)
                 }
                 );
         }
