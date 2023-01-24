@@ -23,13 +23,15 @@ namespace ECommerceBlazorApp.Server.Services.ProductService
 
         public async Task<Product> GetProduct(int id)
         {
-            return await _dataContext.Products.FirstOrDefaultAsync(p => p.Id == id);
+            return await _dataContext.Products
+                .Include(p => p.Editions).FirstOrDefaultAsync(p => p.Id == id);
         }
 
         public async Task<List<Product>> GetProductsByCategory(string categoryUrl)
         {
             var category = await _categoryService.GetCategoryByUrl(categoryUrl);
-            return await _dataContext.Products.Where(p => p.CategoryId == category.Id).ToListAsync();
+            return await _dataContext.Products
+                .Include(p => p.Editions).Where(p => p.CategoryId == category.Id).ToListAsync();
         }
     }
 }
