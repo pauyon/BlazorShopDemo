@@ -1,5 +1,8 @@
 ﻿@page "/product/{Id:int}"
 @inject IProductService ProductService
+@inject ILocalStorageService LocalStorageService
+@inject IToastService ToastService
+@inject ICartService CartService
 
 <div class="media">
     <div class="media-img-big-wrapper mr-2">
@@ -29,7 +32,7 @@
                 $@GetSelectedVariant().Price
             </h4>
         }
-        <button class="btn btn-primary"><i class="oi oi-cart"></i>&nbsp; Add to Cart</button>
+        <button class="btn btn-primary" @onclick="AddToCart"><i class="oi oi-cart"></i>&nbsp; Add to Cart</button>
     </div>
 </div>
 
@@ -53,5 +56,10 @@
     private ProductVariant GetSelectedVariant()
     {
         return _product.Variants.FirstOrDefault(v => v.EditionId == _currentEditionId);
+    }
+
+    private async Task AddToCart()
+    {
+        await CartService.AddToCart(GetSelectedVariant());
     }
 }
