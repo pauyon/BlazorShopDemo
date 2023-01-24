@@ -8,30 +8,34 @@
     <div class="media-body">
         <h2 class="mb-0">@_product.Title</h2>
         <p>@_product.Description</p>
-        @if (_product.Editions != null && _product.Editions.Count > 0)
+        @if (_product.Variants != null && _product.Variants.Count > 0)
         {
             <div class="form-group">
-                <select class="form-control">
-                    @foreach (var edition in _product.Editions)
+                <select class="form-control" @bind="_currentEditionId">
+                    @foreach (var variant in _product.Variants)
                     {
-                        <option>@edition.Name</option>
+                        <option value="@variant.EditionId">@variant.Edition.Name</option>
                     }
                 </select>
             </div>
         }
-        @if(_product.OriginalPrice > _product.Price)
+        @if (GetSelectedVariant() != null)
         {
-            <h6 class="text-muted original-price">$@_product.OriginalPrice</h6>
+            @if (GetSelectedVariant().OriginalPrice > GetSelectedVariant().Price)
+            {
+                <h6 class="text-muted original-price">$@GetSelectedVariant().OriginalPrice</h6>
+            }
+            <h4 class="price">
+                $@GetSelectedVariant().Price
+            </h4>
         }
-        <h4 class="price">
-            $@_product.Price
-        </h4>
         <button class="btn btn-primary"><i class="oi oi-cart"></i>&nbsp; Add to Cart</button>
     </div>
 </div>
 
 @code {
     private Product _product = new Product();
+    private int _currentEditionId = 1;
 
     [Parameter]
     public int Id { get; set; }
@@ -39,5 +43,15 @@
     protected override async Task OnInitializedAsync()
     {
         _product = await ProductService.GetProduct(Id);
+
+        if (_product.Variants.Any())
+        {
+            _currentEditionId = _product.Variants.First().EditionId;
+        }
+    }
+
+    private ProductVariant GetSelectedVariant()
+    {
+        return _product.Variants.FirstOrDefault(v => v.EditionId == _currentEditionId);
     }
 }
