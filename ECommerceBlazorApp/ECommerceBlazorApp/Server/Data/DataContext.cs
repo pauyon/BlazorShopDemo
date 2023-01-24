@@ -145,6 +145,31 @@ namespace ECommerceBlazorApp.Server.Data
                     DateCreated = new DateTime(2023, 1, 1)
                 }
                 );
+
+            modelBuilder.Entity<Edition>().HasData(
+                new Edition { Id = 1, Name = "PaperBack" },
+                new Edition { Id = 2, Name = "E-Book" },
+                new Edition { Id = 3, Name = "Audiobook" },
+                new Edition { Id = 4, Name = "PC" },
+                new Edition { Id = 5, Name = "PlayStation" },
+                new Edition { Id = 6, Name = "Xbox" }
+                );
+
+            modelBuilder.SharedTypeEntity<Dictionary<string, object>>("EditionProduct")
+                .HasData(
+                    new { EditionsId = 1, ProductsId = 9 },
+                    new { EditionsId = 2, ProductsId = 9 },
+                    new { EditionsId = 3, ProductsId = 9 },
+                    new { EditionsId = 1, ProductsId = 10 },
+                    new { EditionsId = 2, ProductsId = 10 },
+                    new { EditionsId = 3, ProductsId = 10 },
+                    new { EditionsId = 1, ProductsId = 11 },
+                    new { EditionsId = 2, ProductsId = 11 },
+                    new { EditionsId = 3, ProductsId = 11 },
+                    new { EditionsId = 4, ProductsId = 2 },
+                    new { EditionsId = 5, ProductsId = 2 },
+                    new { EditionsId = 6, ProductsId = 2 }
+                );
         }
     }
 }
