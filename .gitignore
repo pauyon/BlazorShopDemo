@@ -90,3 +90,6 @@ ECommerceBlazorApp/.vs/ECommerceBlazorApp/DesignTimeBuild/.dtbcache.v2
 /ECommerceBlazorApp/ECommerceBlazorApp/Shared/obj
 /ECommerceBlazorApp/ECommerceBlazorApp/Server/obj
 /ECommerceBlazorApp/ECommerceBlazorApp/Client/obj/Debug/net6.0/project.razor.vs.json
+/ECommerceBlazorApp/ECommerceBlazorApp/Client/obj/ECommerceBlazorApp.Client.csproj.nuget.g.props
+/ECommerceBlazorApp/ECommerceBlazorApp/Server/obj/Debug/net6.0/project.razor.vs.json
+/ECommerceBlazorApp/ECommerceBlazorApp/Server/obj/ECommerceBlazorApp.Server.csproj.nuget.g.props
