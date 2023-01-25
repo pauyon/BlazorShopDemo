@@ -36,7 +36,7 @@ namespace BlazorShopDemo.Client
                 var identity = new ClaimsIdentity(new[]
                 {
                     new Claim(ClaimTypes.Name, username)
-                }, "test authentication type");
+                }, "test authentication type");  
 
                 state = new AuthenticationState(new ClaimsPrincipal(identity));
                 ;
