@@ -5,3 +5,10 @@
 bin
 obj
 .vs
+/BlazorShopDemo/BlazorShopDemo/Client/obj/Debug/net6.0/project.razor.vs.json
+/BlazorShopDemo/BlazorShopDemo/Server/obj/Debug/net6.0/project.razor.vs.json
+/BlazorShopDemo/BlazorShopDemo/Server/obj/BlazorShopDemo.Server.csproj.nuget.dgspec.json
+/BlazorShopDemo/BlazorShopDemo/Server/obj/project.assets.json
+/BlazorShopDemo/BlazorShopDemo/Shared/obj/Debug/net6.0/BlazorShopDemo.Shared.csproj.FileListAbsolute.txt
+/BlazorShopDemo/BlazorShopDemo/Client/obj/project.assets.json
+/BlazorShopDemo/BlazorShopDemo/Client/obj/BlazorShopDemo.Client.csproj.nuget.dgspec.json
