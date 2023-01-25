@@ -1,7 +1,7 @@
 using BlazorShopDemo.Server.Data;
 using BlazorShopDemo.Server.Services.CategoryService;
 using BlazorShopDemo.Server.Services.ProductService;
-using Microsoft.AspNetCore.ResponseCompression;
+using BlazorShopDemo.Server.Services.StatsService;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,6 +17,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IStatsService, StatsService>();
 
 var app = builder.Build();
 
