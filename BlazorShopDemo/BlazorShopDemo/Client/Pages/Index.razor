@@ -2,6 +2,7 @@
 @page "/{CategoryUrl}"
 @inject ICategoryService CategoryService
 @inject IProductService ProductService
+@inject ISyncLocalStorageService LocalStorageService
 
 @if (_category != null)
 {
@@ -10,7 +11,14 @@
 }
 else
 {
-    <h1>Welcome to my store!</h1>
+    <AuthorizeView>
+        <NotAuthorized>
+            <h1>Welcome to my store!</h1>
+        </NotAuthorized>
+        <Authorized>
+            <h1>Welcome back, @LocalStorageService.GetItemAsString("username").ToString()!</h1>
+        </Authorized>
+    </AuthorizeView>
     <ProductList />
 }
 

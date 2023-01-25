@@ -4,6 +4,7 @@ using BlazorShopDemo.Client;
 using BlazorShopDemo.Client.Services.CartService;
 using BlazorShopDemo.Client.Services.CategoryService;
 using BlazorShopDemo.Client.Services.ProductService;
+using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
@@ -17,5 +18,8 @@ builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<ICartService, CartService>();
 builder.Services.AddBlazoredLocalStorage();
 builder.Services.AddBlazoredToast();
+builder.Services.AddOptions();
+builder.Services.AddAuthorizationCore();
+builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthStateProvider>();
 
 await builder.Build().RunAsync();

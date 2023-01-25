@@ -1,4 +1,7 @@
 ﻿@page "/login"
+@inject ILocalStorageService LocalStorageService
+@inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider AuthenticationStateProvider
 
 <h3>Login</h3>
 
@@ -17,8 +20,11 @@
 @code {
     private User _user = new User();
 
-    private void HandleLogin()
+    private async void HandleLogin()
     {
         Console.WriteLine("Log me in!");
+        await LocalStorageService.SetItemAsync<string>("username", _user.Username);
+        await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        NavigationManager.NavigateTo("");
     }
 }
