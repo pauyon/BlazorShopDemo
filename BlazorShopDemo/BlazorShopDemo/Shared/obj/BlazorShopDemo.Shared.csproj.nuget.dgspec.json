@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pauli\\Documents\\GitHub\\BlazorShopDemo\\BlazorShopDemo\\BlazorShopDemo\\Shared\\BlazorShopDemo.Shared.csproj": {}
+    "C:\\Users\\pauli\\Source\\Repos\\pauyon\\BlazorShopDemo\\BlazorShopDemo\\BlazorShopDemo\\Shared\\BlazorShopDemo.Shared.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pauli\\Documents\\GitHub\\BlazorShopDemo\\BlazorShopDemo\\BlazorShopDemo\\Shared\\BlazorShopDemo.Shared.csproj": {
+    "C:\\Users\\pauli\\Source\\Repos\\pauyon\\BlazorShopDemo\\BlazorShopDemo\\BlazorShopDemo\\Shared\\BlazorShopDemo.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pauli\\Documents\\GitHub\\BlazorShopDemo\\BlazorShopDemo\\BlazorShopDemo\\Shared\\BlazorShopDemo.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\pauli\\Source\\Repos\\pauyon\\BlazorShopDemo\\BlazorShopDemo\\BlazorShopDemo\\Shared\\BlazorShopDemo.Shared.csproj",
         "projectName": "BlazorShopDemo.Shared",
-        "projectPath": "C:\\Users\\pauli\\Documents\\GitHub\\BlazorShopDemo\\BlazorShopDemo\\BlazorShopDemo\\Shared\\BlazorShopDemo.Shared.csproj",
+        "projectPath": "C:\\Users\\pauli\\Source\\Repos\\pauyon\\BlazorShopDemo\\BlazorShopDemo\\BlazorShopDemo\\Shared\\BlazorShopDemo.Shared.csproj",
         "packagesPath": "C:\\Users\\pauli\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pauli\\Documents\\GitHub\\BlazorShopDemo\\BlazorShopDemo\\BlazorShopDemo\\Shared\\obj\\",
+        "outputPath": "C:\\Users\\pauli\\Source\\Repos\\pauyon\\BlazorShopDemo\\BlazorShopDemo\\BlazorShopDemo\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
