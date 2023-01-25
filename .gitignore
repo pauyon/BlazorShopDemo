@@ -12,8 +12,3 @@
 /BlazorShopDemo/BlazorShopDemo/Shared/obj/*
 /BlazorShopDemo/BlazorShopDemo/Shared/obj/Debug/*
 /BlazorShopDemo/.vs
-/BlazorShopDemo/BlazorShopDemo/Client/obj/Debug/net6.0/BlazorShopDemo.Client.assets.cache
-/BlazorShopDemo/BlazorShopDemo/Client/obj/Debug/net6.0/BlazorShopDemo.Client.csproj.FileListAbsolute.txt
-/BlazorShopDemo/BlazorShopDemo/Server/obj/Debug/net6.0/BlazorShopDemo.Server.assets.cache
-/BlazorShopDemo/BlazorShopDemo/Server/obj/Debug/net6.0/BlazorShopDemo.Server.csproj.FileListAbsolute.txt
-/BlazorShopDemo/BlazorShopDemo/Shared/obj/Debug/net6.0/BlazorShopDemo.Shared.assets.cache
