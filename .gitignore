@@ -6,4 +6,7 @@
 /BlazorShopDemo/BlazorShopDemo/Server/bin/*
 /BlazorShopDemo/BlazorShopDemo/Server/obj/*
 /BlazorShopDemo/BlazorShopDemo/Client/obj/*
-/.vs/*
+/BlazorShopDemo/BlazorShopDemo/Client/obj/Debug/*
+/BlazorShopDemo/BlazorShopDemo/Server/obj/Debug/*
+/BlazorShopDemo/.vs/*
+*.cache
