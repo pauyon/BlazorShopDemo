@@ -3,12 +3,13 @@
 ################################################################################
 
 /BlazorShopDemo/BlazorShopDemo/Client/bin/*
-/BlazorShopDemo/BlazorShopDemo/Server/bin/*
-/BlazorShopDemo/BlazorShopDemo/Shared/bin/*
 /BlazorShopDemo/BlazorShopDemo/Client/obj/*
+/BlazorShopDemo/BlazorShopDemo/Client/obj/Debug/*
+/BlazorShopDemo/BlazorShopDemo/Server/bin/*
 /BlazorShopDemo/BlazorShopDemo/Server/obj/*
+/BlazorShopDemo/BlazorShopDemo/Server/obj/Debug/*
+/BlazorShopDemo/BlazorShopDemo/Shared/bin/*
 /BlazorShopDemo/BlazorShopDemo/Shared/obj/*
-bin/*
-obj/*
-/BlazorShopDemo/.vs/*
-*.cache
+/BlazorShopDemo/BlazorShopDemo/Shared/obj/Debug/*
+/BlazorShopDemo/.vs
+Debug/*
