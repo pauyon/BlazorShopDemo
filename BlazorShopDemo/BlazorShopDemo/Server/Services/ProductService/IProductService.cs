@@ -9,5 +9,7 @@ namespace BlazorShopDemo.Server.Services.ProductService
         Task<List<Product>> GetProductsByCategory(string categoryUrl);
 
         Task<Product> GetProduct(int id);
+
+        Task<List<Product>> SearchProducts(string searchText);
     }
 }

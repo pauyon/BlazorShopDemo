@@ -43,5 +43,12 @@ namespace BlazorShopDemo.Server.Services.ProductService
                 .Where(p => p.CategoryId == category.Id)
                 .ToListAsync();
         }
+
+        public async Task<List<Product>> SearchProducts(string searchText)
+        {
+            return await _dataContext.Products
+                .Where(p => p.Title.Contains(searchText) ||
+                            p.Description.Contains(searchText)).ToListAsync();
+        }
     }
 }

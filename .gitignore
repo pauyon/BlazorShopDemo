@@ -12,3 +12,5 @@ obj
 /BlazorShopDemo/BlazorShopDemo/Shared/obj/Debug/net6.0/BlazorShopDemo.Shared.csproj.FileListAbsolute.txt
 /BlazorShopDemo/BlazorShopDemo/Client/obj/project.assets.json
 /BlazorShopDemo/BlazorShopDemo/Client/obj/BlazorShopDemo.Client.csproj.nuget.dgspec.json
+BlazorShopDemo/BlazorShopDemo/Client/obj/BlazorShopDemo.Client.csproj.nuget.g.props
+BlazorShopDemo/BlazorShopDemo/Server/obj/BlazorShopDemo.Server.csproj.nuget.g.props
