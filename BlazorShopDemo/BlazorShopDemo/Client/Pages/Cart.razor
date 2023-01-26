@@ -3,33 +3,60 @@
 
 <h3>Shopping Cart</h3>
 
-@if (_cartItems == null || _cartItems.Count <= 0)
+@if (_orderPlaced)
 {
-    <span>You have no items in your cart.</span>
+    <h4>Thank you for your order!</h4>
+    <h5>This is what you ordered:</h5>
+
+    @foreach (var item in _cartItems)
+    {
+        <div class="item-continer">
+            <div class="item-image-wrapper"><img src="@item.Image" class="item-image"></div>
+            <div class="item-name">
+                <h5><a href="/product/@item.ProductId">@item.ProductTitle</a></h5>
+                <span>@item.EditionName</span>
+            </div>
+            <div class="item-price">$@(item.Price * item.Quantity)</div>
+        </div>
+    }
 }
 else
 {
-    <div>
-        @foreach (var item in _cartItems)
-        {
-            <div class="item-continer">
-                <div class="item-image-wrapper"><img src="@item.Image" class="item-image"></div>
-                <div class="item-name">
-                    <h5><a href="/product/@item.ProductId">@item.ProductTitle</a></h5>
-                    <span>@item.EditionName</span>
-                    <button class="btn btn-danger" @onclick="@(() => DeleteItem(item))">Remove</button>
+    @if (_cartItems == null || _cartItems.Count <= 0)
+    {
+        <span>You have no items in your cart.</span>
+    }
+    else
+    {
+        <div>
+            @foreach (var item in _cartItems)
+            {
+                <div class="item-continer">
+                    <div class="item-image-wrapper"><img src="@item.Image" class="item-image"></div>
+                    <div class="item-name">
+                        <h5><a href="/product/@item.ProductId">@item.ProductTitle</a></h5>
+                        <span>@item.EditionName</span>
+                        <button class="btn btn-danger" @onclick="@(() => DeleteItem(item))">Remove</button>
+                        <EditForm Model="item">
+                            <InputNumber id="quantity" @bind-Value="item.Quantity" class="form-control" style="width: 70px;" />
+                        </EditForm>
+                    </div>
+                    <div class="item-price">$@(item.Price * item.Quantity)</div>
                 </div>
-                <div class="item-price">$@item.Price</div>
+            }
+            <div class="item-price">
+                Total (@_cartItems.Count): $@_cartItems.Sum(item => item.Price * item.Quantity)
             </div>
-        }
-        <div class="item-price">
-            Total (@_cartItems.Count): $@_cartItems.Sum(item => item.Price)
+            <div style="text-align: center; margin-top: 10px">
+                <button class="btn btn-primary btn-lg" @onclick="PlaceOrder">Place Order</button>
+            </div>
         </div>
-    </div>
+    }
 }
 
 @code {
     private List<CartItem> _cartItems = new List<CartItem>();
+    private bool _orderPlaced = false;
 
     protected override async Task OnInitializedAsync()
     {
@@ -40,5 +67,11 @@ else
     {
         await CartService.DeleteItem(item);
         _cartItems = await CartService.GetCartItems();
+    }
+
+    private async Task PlaceOrder()
+    {
+        _orderPlaced = true;
+        await CartService.EmptyCart();
     }
 }

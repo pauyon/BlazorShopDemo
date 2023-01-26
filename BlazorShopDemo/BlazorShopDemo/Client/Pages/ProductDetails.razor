@@ -5,7 +5,7 @@
 @inject ICartService CartService
 
 <div class="views">
-    <i class="oi oi-eye"></i> @_product.Views.ToString("0##")
+    <i class="oi oi-eye"></i> @GetViewString()
 </div>
 <div class="media">
     <div class="media-img-big-wrapper mr-2">
@@ -35,11 +35,19 @@
                 $@GetSelectedVariant().Price
             </h4>
         }
+
+        <EditForm Model="_cartItem">
+            <div class="form-group">
+                <InputNumber id="quanity" @bind-Value="_cartItem.Quantity" class="form-control" style="width: 70px;" />
+            </div>
+        </EditForm>
+
         <button class="btn btn-primary" @onclick="AddToCart"><i class="oi oi-cart"></i>&nbsp; Add to Cart</button>
     </div>
 </div>
 
 @code {
+    private CartItem _cartItem = new CartItem { Quantity = 1 };
     private Product _product = new Product();
     private int _currentEditionId = 1;
 
@@ -63,6 +71,23 @@
 
     private async Task AddToCart()
     {
-        await CartService.AddToCart(GetSelectedVariant());
+        var productVariant = GetSelectedVariant();
+
+        _cartItem.EditionId = productVariant.EditionId;
+        _cartItem.EditionName = productVariant.Edition.Name;
+        _cartItem.Image = _product.Image;
+        _cartItem.Price = productVariant.Price;
+        _cartItem.ProductId = productVariant.ProductId;
+        _cartItem.ProductTitle = _product.Title;
+
+        await CartService.AddToCart(_cartItem);
+    }
+
+    private string GetViewString()
+    {
+        if (_product.Views > 1000000) return $"{((float)_product.Views / 1000000).ToString("#.##")}M";
+        if (_product.Views > 100000) return $"{((float)_product.Views / 10000).ToString("#.##")}K";
+        if (_product.Views > 1000) return $"{((float)_product.Views / 1000).ToString("#.##")}K";
+        return @_product.Views.ToString("0##");
     }
 }
