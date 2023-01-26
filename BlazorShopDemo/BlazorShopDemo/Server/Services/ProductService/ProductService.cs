@@ -23,10 +23,16 @@ namespace BlazorShopDemo.Server.Services.ProductService
 
         public async Task<Product> GetProduct(int id)
         {
-            return await _dataContext.Products
+            var product = await _dataContext.Products
                 .Include(p => p.Variants)
                 .ThenInclude(v => v.Edition)
                 .FirstOrDefaultAsync(p => p.Id == id);
+
+            product.Views++;
+
+            await _dataContext.SaveChangesAsync();
+
+            return product;
         }
 
         public async Task<List<Product>> GetProductsByCategory(string categoryUrl)
