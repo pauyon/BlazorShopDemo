@@ -10,32 +10,33 @@
             <img class="img-fluid" src="@_product.Image" alt="@_product.Title" />
         </div>
     </div>
-    <div class="col-lg-6">
+    <div class="col-lg-7">
         <h3 class="mb-0">@_product.Title</h3>
         <p>@_product.Description</p>
         <div class="float-right">
             <i class="oi oi-eye"></i> @GetViewString()
         </div>
     </div>
-    <div class="col-lg-3">
-        <div class="card shadow text-center">
+    <div class="col-lg-2">
+        <div class="card shadow">
             <div class="card-body">
                 @if (GetSelectedVariant() != null)
                 {
                     <div class="row">
-                        <div class="col-lg-12">
+                        <div class="col-lg-12 text-center">
+                            <h3 class="price">
+                                $@GetSelectedVariant().Price
+                            </h3>
                             @if (GetSelectedVariant().OriginalPrice > GetSelectedVariant().Price)
                             {
                                 <h6 class="text-muted original-price">$@GetSelectedVariant().OriginalPrice</h6>
                             }
-                            <h4 class="price">
-                                $@GetSelectedVariant().Price
-                            </h4>
                         </div>
                     </div>
                 }
                 @if (_product.Variants != null && _product.Variants.Count > 1)
                 {
+                    <label>Edition:</label>
                     <select class="form-select" @bind="_currentEditionId">
                         @foreach (var variant in _product.Variants)
                         {
@@ -46,6 +47,7 @@
 
                 <EditForm Model="_cartItem">
                     <div class="form-group">
+                        <label>Qty:</label>
                         <InputNumber id="quanity" @bind-Value="_cartItem.Quantity" class="form-control"/>
                     </div>
                 </EditForm>
