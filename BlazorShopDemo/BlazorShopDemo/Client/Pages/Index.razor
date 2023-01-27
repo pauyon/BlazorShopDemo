@@ -7,14 +7,22 @@
 
 @if (_category != null)
 {
-    <h1>Welcome to the @_category.Name section!</h1>
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <h1>Welcome to the @_category.Name section!</h1>
+        </div>
+    </div>
     <ProductList />
 }
 else
 {
     <AuthorizeView>
         <NotAuthorized>
-            <h1>Welcome to my store!</h1>
+            <div class="card shadow mb-4">
+                <div class="card-body">
+                    <h1>Welcome to my store!</h1>
+                </div>
+            </div>
         </NotAuthorized>
         <Authorized>
             <h1>Welcome back, @LocalStorageService.GetItemAsString("username").ToString()!</h1>

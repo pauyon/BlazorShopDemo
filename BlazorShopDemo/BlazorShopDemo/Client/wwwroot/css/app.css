@@ -2,6 +2,7 @@
 
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #e3e6e6;
 }
 
 h1:focus {
@@ -34,11 +35,20 @@ a, .btn-link {
     color: red;
 }
 
+.product-card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.product-card-img-wrapper {
+    overflow: hidden;
+    height: 20rem;
+}
+
 .zoom-hover {
-    padding: 10px;
+    object-fit: cover;
     transition: transform .2s; /* Animation */
-    width: 150px;
-    height: auto;
 }
 
     .zoom-hover:hover {
