@@ -4,13 +4,14 @@
 @inject NavigationManager NavigationManager
 @implements IDisposable
 
-<BlazoredTypeahead SearchMethod="@SearchProduct" 
-                    TValue="Product"
-                    TItem="Product"
-                    Value="_selectedProduct"
-                    ValueChanged="HandleSearch"
-                    ValueExpression="@(() => _selectedProduct)"
-                    placeholder="Search...">
+<BlazoredTypeahead 
+    SearchMethod="@SearchProduct"
+    TValue="Product"
+    TItem="Product"
+    Value="_selectedProduct"
+    ValueChanged="HandleSearch"
+    ValueExpression="@(() => _selectedProduct)"
+    placeholder="Search...">
     <SelectedTemplate>
         @context.Title
     </SelectedTemplate>
@@ -22,11 +23,10 @@
     </NotFoundTemplate>
 </BlazoredTypeahead>
 
-<a href="cart" class="btn btn-primary">
+<a href="cart" class="btn btn-primary me-auto">
     <i class="oi oi-cart"></i> Cart
     <span class="badge badge-pill">@GetProductCount()</span>
 </a>
-
 
 @code {
     private Product _selectedProduct;

@@ -67,7 +67,7 @@ else
                         </li>
                     }
                     <h4 class="text-end mt-2">
-                        Sub-Total (@_cartItems.Count): $@_cartItems.Sum(item => item.Price * item.Quantity) &nbsp;
+                        Total (@_cartItems.Count): $@_cartItems.Sum(item => item.Price * item.Quantity) &nbsp;
                     </h4>
                     <div class="text-center">
                         <button class="btn btn-primary btn-lg" @onclick="PlaceOrder">Place Order</button>
