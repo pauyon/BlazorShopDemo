@@ -9,6 +9,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorShopDemo.Client", "Bl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorShopDemo.Shared", "BlazorShopDemo\Shared\BlazorShopDemo.Shared.csproj", "{FE6221A1-432F-4642-95D6-38B658D8CA79}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{D4997945-A1B2-47D5-9AC8-6A5EA130D18B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{39B7B940-200F-4C6D-BA35-E4186DC2BFB5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{DD00BBD3-54E8-457B-9472-700BA8514E27}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +36,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CEF2636C-D7F2-4065-A08A-9E446007DE04} = {39B7B940-200F-4C6D-BA35-E4186DC2BFB5}
+		{E59EE64A-B3E9-4F7A-AECC-A07ED154FE42} = {D4997945-A1B2-47D5-9AC8-6A5EA130D18B}
+		{FE6221A1-432F-4642-95D6-38B658D8CA79} = {DD00BBD3-54E8-457B-9472-700BA8514E27}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {229F4D61-1A57-4A22-995D-5E0735746FC1}
