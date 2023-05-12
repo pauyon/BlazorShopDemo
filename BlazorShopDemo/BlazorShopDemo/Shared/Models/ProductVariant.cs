@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
-namespace BlazorShopDemo.Shared
+namespace BlazorShopDemo.Domain.Models
 {
     public class ProductVariant
     {

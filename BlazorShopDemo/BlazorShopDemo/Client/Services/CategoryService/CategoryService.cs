@@ -1,4 +1,4 @@
-﻿using BlazorShopDemo.Shared;
+﻿using BlazorShopDemo.Domain.Models;
 using System.Net.Http.Json;
 
 namespace BlazorShopDemo.Client.Services.CategoryService

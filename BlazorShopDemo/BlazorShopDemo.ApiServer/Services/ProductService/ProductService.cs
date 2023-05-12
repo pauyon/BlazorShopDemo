@@ -1,6 +1,6 @@
 ﻿using BlazorShopDemo.ApiServer.Data;
 using BlazorShopDemo.ApiServer.Services.CategoryService;
-using BlazorShopDemo.Shared;
+using BlazorShopDemo.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace BlazorShopDemo.ApiServer.Services.ProductService

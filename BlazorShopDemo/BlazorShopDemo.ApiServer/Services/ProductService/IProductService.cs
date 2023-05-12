@@ -1,4 +1,4 @@
-﻿using BlazorShopDemo.Shared;
+﻿using BlazorShopDemo.Domain.Models;
 
 namespace BlazorShopDemo.ApiServer.Services.ProductService
 {

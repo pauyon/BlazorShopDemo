@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace BlazorShopDemo.Shared
+namespace BlazorShopDemo.Domain.Models
 {
     public class Product
     {

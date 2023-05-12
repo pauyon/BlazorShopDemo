@@ -1,4 +1,4 @@
-﻿using BlazorShopDemo.Shared;
+﻿using BlazorShopDemo.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace BlazorShopDemo.Server.Data

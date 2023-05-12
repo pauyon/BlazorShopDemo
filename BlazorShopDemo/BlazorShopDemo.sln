@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorShopDemo.Server", "Bl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorShopDemo.Client", "BlazorShopDemo\Client\BlazorShopDemo.Client.csproj", "{E59EE64A-B3E9-4F7A-AECC-A07ED154FE42}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorShopDemo.Shared", "BlazorShopDemo\Shared\BlazorShopDemo.Shared.csproj", "{FE6221A1-432F-4642-95D6-38B658D8CA79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorShopDemo.Domain", "BlazorShopDemo\Shared\BlazorShopDemo.Domain.csproj", "{FE6221A1-432F-4642-95D6-38B658D8CA79}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{D4997945-A1B2-47D5-9AC8-6A5EA130D18B}"
 EndProject

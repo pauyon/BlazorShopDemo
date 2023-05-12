@@ -1,5 +1,5 @@
-﻿using BlazorShopDemo.Server.Services.CategoryService;
-using BlazorShopDemo.Shared;
+﻿using BlazorShopDemo.Domain.Models;
+using BlazorShopDemo.Server.Services.CategoryService;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BlazorShopDemo.Server.Controllers

@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace BlazorShopDemo.Shared
+namespace BlazorShopDemo.Domain.Models
 {
     public class Edition
     {

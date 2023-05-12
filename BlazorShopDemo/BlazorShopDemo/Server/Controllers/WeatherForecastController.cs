@@ -1,4 +1,4 @@
-using BlazorShopDemo.Shared;
+using BlazorShopDemo.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BlazorShopDemo.Server.Controllers

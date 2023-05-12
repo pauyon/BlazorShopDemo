@@ -1,5 +1,5 @@
-﻿using BlazorShopDemo.Server.Services.ProductService;
-using BlazorShopDemo.Shared;
+﻿using BlazorShopDemo.Domain.Models;
+using BlazorShopDemo.Server.Services.ProductService;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

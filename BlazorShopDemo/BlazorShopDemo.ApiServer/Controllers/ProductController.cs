@@ -1,5 +1,5 @@
 ﻿using BlazorShopDemo.ApiServer.Services.ProductService;
-using BlazorShopDemo.Shared;
+using BlazorShopDemo.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BlazorShopDemo.ApiServer.Controllers

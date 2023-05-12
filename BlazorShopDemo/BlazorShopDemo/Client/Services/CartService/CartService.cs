@@ -1,7 +1,7 @@
 ﻿using Blazored.LocalStorage;
 using Blazored.Toast.Services;
 using BlazorShopDemo.Client.Services.ProductService;
-using BlazorShopDemo.Shared;
+using BlazorShopDemo.Domain.Models;
 
 namespace BlazorShopDemo.Client.Services.CartService
 {

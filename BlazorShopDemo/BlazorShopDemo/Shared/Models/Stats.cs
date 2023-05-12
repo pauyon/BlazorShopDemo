@@ -1,4 +1,4 @@
-﻿namespace BlazorShopDemo.Shared
+﻿namespace BlazorShopDemo.Domain.Models
 {
     public class Stats
     {
