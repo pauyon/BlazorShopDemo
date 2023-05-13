@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pauli\\Documents\\GitHub\\BlazorShopDemo\\BlazorShopDemo\\BlazorShopDemo\\Shared\\BlazorShopDemo.Domain.csproj",
-      "projectName": "BlazorShopDemo.Domain",
-      "projectPath": "C:\\Users\\pauli\\Documents\\GitHub\\BlazorShopDemo\\BlazorShopDemo\\BlazorShopDemo\\Shared\\BlazorShopDemo.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\pauli\\Documents\\GitHub\\BlazorShopDemo\\BlazorShopDemo\\BlazorShopDemo\\Shared\\BlazorShopDemo.Shared.csproj",
+      "projectName": "BlazorShopDemo.Shared",
+      "projectPath": "C:\\Users\\pauli\\Documents\\GitHub\\BlazorShopDemo\\BlazorShopDemo\\BlazorShopDemo\\Shared\\BlazorShopDemo.Shared.csproj",
       "packagesPath": "C:\\Users\\pauli\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\pauli\\Documents\\GitHub\\BlazorShopDemo\\BlazorShopDemo\\BlazorShopDemo\\Shared\\obj\\",
       "projectStyle": "PackageReference",
