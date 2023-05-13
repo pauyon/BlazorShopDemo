@@ -1,9 +1,11 @@
 using Blazored.LocalStorage;
 using Blazored.Toast;
+using BlazorShopDemo.BlazorServer;
 using BlazorShopDemo.BlazorServer.Services.CartService;
 using BlazorShopDemo.BlazorServer.Services.CategoryService;
 using BlazorShopDemo.BlazorServer.Services.ProductService;
 using BlazorShopDemo.BlazorServer.Services.StatsService;
+using Microsoft.AspNetCore.Components.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +22,9 @@ builder.Services.AddScoped<IStatsService, StatsService>();
 
 builder.Services.AddBlazoredLocalStorage();
 builder.Services.AddBlazoredToast();
+
+builder.Services.AddAuthorizationCore();
+builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthStateProvider>();
 
 var app = builder.Build();
 
