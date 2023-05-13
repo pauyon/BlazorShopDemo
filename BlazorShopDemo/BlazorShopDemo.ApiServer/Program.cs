@@ -2,6 +2,7 @@ using BlazorShopDemo.ApiServer.Data;
 using BlazorShopDemo.ApiServer.Services.CategoryService;
 using BlazorShopDemo.ApiServer.Services.ProductService;
 using BlazorShopDemo.ApiServer.Services.StatsService;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,9 +14,9 @@ builder.Services.AddDbContext<DataContext>(options =>
 });
 
 var policyName = "CorsPolicy";
-builder.Services.AddCors(o =>
+builder.Services.AddCors(options =>
 {
-    o.AddPolicy(policyName, builder =>
+    options.AddPolicy(policyName, builder =>
     {
         builder.AllowAnyOrigin()
         .AllowAnyMethod()
@@ -33,6 +34,8 @@ builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IStatsService, StatsService>();
 
 var app = builder.Build();
+
+app.UseMiddleware<CorsMiddleware>(policyName);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorShopDemo.Server", "BlazorShopDemo\Server\BlazorShopDemo.Server.csproj", "{CEF2636C-D7F2-4065-A08A-9E446007DE04}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorShopDemo.Client", "BlazorShopDemo\Client\BlazorShopDemo.Client.csproj", "{E59EE64A-B3E9-4F7A-AECC-A07ED154FE42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorShopDemo.BlazorWasm", "BlazorShopDemo\Client\BlazorShopDemo.BlazorWasm.csproj", "{E59EE64A-B3E9-4F7A-AECC-A07ED154FE42}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorShopDemo.Domain", "BlazorShopDemo\Shared\BlazorShopDemo.Domain.csproj", "{FE6221A1-432F-4642-95D6-38B658D8CA79}"
 EndProject
@@ -15,9 +13,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{39B7B940-200
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{DD00BBD3-54E8-457B-9472-700BA8514E27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorShopDemo.ApiServer", "BlazorShopDemo.ApiServer\BlazorShopDemo.ApiServer.csproj", "{9B7E4F11-8DDA-4848-ADC6-33463386AE43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorShopDemo.ApiServer", "BlazorShopDemo.ApiServer\BlazorShopDemo.ApiServer.csproj", "{9B7E4F11-8DDA-4848-ADC6-33463386AE43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorShopDemo.BlazorServer", "BlazorShopDemo.BlazorServer\BlazorShopDemo.BlazorServer.csproj", "{C7DE9BE3-C679-44DA-A19F-C536BE74EB40}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorShopDemo.BlazorServer", "BlazorShopDemo.BlazorServer\BlazorShopDemo.BlazorServer.csproj", "{C7DE9BE3-C679-44DA-A19F-C536BE74EB40}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +23,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CEF2636C-D7F2-4065-A08A-9E446007DE04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CEF2636C-D7F2-4065-A08A-9E446007DE04}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CEF2636C-D7F2-4065-A08A-9E446007DE04}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CEF2636C-D7F2-4065-A08A-9E446007DE04}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E59EE64A-B3E9-4F7A-AECC-A07ED154FE42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E59EE64A-B3E9-4F7A-AECC-A07ED154FE42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E59EE64A-B3E9-4F7A-AECC-A07ED154FE42}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -50,7 +44,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{CEF2636C-D7F2-4065-A08A-9E446007DE04} = {39B7B940-200F-4C6D-BA35-E4186DC2BFB5}
 		{E59EE64A-B3E9-4F7A-AECC-A07ED154FE42} = {D4997945-A1B2-47D5-9AC8-6A5EA130D18B}
 		{FE6221A1-432F-4642-95D6-38B658D8CA79} = {DD00BBD3-54E8-457B-9472-700BA8514E27}
 		{9B7E4F11-8DDA-4848-ADC6-33463386AE43} = {39B7B940-200F-4C6D-BA35-E4186DC2BFB5}
