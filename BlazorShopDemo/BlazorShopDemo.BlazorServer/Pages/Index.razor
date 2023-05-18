@@ -1,5 +1,7 @@
-﻿@page "/"
+﻿@page "/categories"
 @page "/{CategoryUrl}"
+@attribute [Authorize(Roles = "Administrator,User")]
+
 @inject ICategoryService CategoryService
 @inject IProductService ProductService
 @inject ISyncLocalStorageService LocalStorageService
@@ -25,7 +27,7 @@ else
             </div>
         </NotAuthorized>
         <Authorized>
-            <h1>Welcome back, @LocalStorageService.GetItemAsString("username").ToString()!</h1>
+            <h1>Welcome back, @_user!</h1>
         </Authorized>
     </AuthorizeView>
     <ProductList />
@@ -37,21 +39,32 @@ else
     public string? CategoryUrl { get; set; }
 
     private Category? _category;
+    private string _user;
+
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationState { get; set; }
 
     protected override async Task OnParametersSetAsync()
     {
-        await ProductService.LoadProducts(CategoryUrl);
+        var authState = await authenticationState;
 
-        if (CategoryUrl != null)
+        if (authState != null && authState.User.Identity.IsAuthenticated)
         {
-            _category = CategoryService.Categories.FirstOrDefault(c => c.Url.ToLower().Equals(CategoryUrl.ToLower()));
-        }
-        else
-        {
-            _category = null;
-        }
+            _user = authState.User.Identity.Name;
 
-        await StatsService.IncrementVisists();
-        await StatsService.GetVisits();
+            await ProductService.LoadProducts(CategoryUrl);
+
+            if (CategoryUrl != null)
+            {
+                _category = CategoryService.Categories.FirstOrDefault(c => c.Url.ToLower().Equals(CategoryUrl.ToLower()));
+            }
+            else
+            {
+                _category = null;
+            }
+
+            await StatsService.IncrementVisists();
+            await StatsService.GetVisits();
+        }
     }
 }

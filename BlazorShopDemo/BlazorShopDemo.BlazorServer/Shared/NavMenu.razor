@@ -1,6 +1,9 @@
-﻿@inject ICategoryService CategoryService
+﻿@using BlazorShopDemo.BlazorServer.Authentication;
+@inject ICategoryService CategoryService
 @inject ILocalStorageService LocalStorageService
 @inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager navManager
+
 
 <MudNavMenu>
     <MudNavLink Href="/" Match="NavLinkMatch.All">Home</MudNavLink>
@@ -16,7 +19,7 @@
             <MudNavLink Href="/login" Match="NavLinkMatch.Prefix">Login</MudNavLink>
         </NotAuthorized>
         <Authorized>
-            <MudNavLink Href="/logout" @onclick="Logout" Match="NavLinkMatch.Prefix">Logout</MudNavLink>
+            <MudNavLink @onclick="Logout" Match="NavLinkMatch.Prefix">Logout</MudNavLink>
         </Authorized>
     </AuthorizeView>
 </MudNavMenu>
@@ -36,9 +39,10 @@
         await CategoryService.GetCategories();
     }
 
-    private async void Logout()
+    private async Task Logout()
     {
-        await LocalStorageService.RemoveItemAsync("username");
-        await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var customAuthStateProvider = (CustomAuthenticationStateProvider)AuthenticationStateProvider;
+        await customAuthStateProvider.UpdateAuthenticationSate(null);
+        navManager.NavigateTo("/login", true);
     }
 }

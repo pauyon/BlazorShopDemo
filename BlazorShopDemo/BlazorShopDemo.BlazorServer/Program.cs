@@ -1,11 +1,13 @@
 using Blazored.LocalStorage;
 using Blazored.Toast;
-using BlazorShopDemo.BlazorServer;
+using BlazorShopDemo.BlazorServer.Authentication;
+using BlazorShopDemo.BlazorServer.Services.Authentication;
 using BlazorShopDemo.BlazorServer.Services.CartService;
 using BlazorShopDemo.BlazorServer.Services.CategoryService;
 using BlazorShopDemo.BlazorServer.Services.ProductService;
 using BlazorShopDemo.BlazorServer.Services.StatsService;
 using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
 using MudBlazor.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -27,7 +29,10 @@ builder.Services.AddBlazoredLocalStorage();
 builder.Services.AddBlazoredToast();
 
 builder.Services.AddAuthorizationCore();
-builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthStateProvider>();
+builder.Services.AddScoped<ProtectedSessionStorage>();
+builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
+builder.Services.AddScoped<UserAccountService>();
+//builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthStateProvider>();
 
 var app = builder.Build();
 
