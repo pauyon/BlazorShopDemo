@@ -1,5 +1,4 @@
 ﻿@page "/cart"
-@attribute [Authorize(Roles = "Administrator,User")]
 @inject ICartService CartService
 
 @if (_orderPlaced)

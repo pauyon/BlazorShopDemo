@@ -1,6 +1,4 @@
-﻿@page "/"
-@page "/login"
-@layout PublicLayout
+﻿@page "/login"
 
 @using BlazorShopDemo.BlazorServer.Authentication;
 @inject UserAccountService userAccountService
@@ -54,7 +52,7 @@
                 Role = userAccount.Role
             });
 
-        navManager.NavigateTo("/categories", true);
+        navManager.NavigateTo("/", true);
     }
 
 }

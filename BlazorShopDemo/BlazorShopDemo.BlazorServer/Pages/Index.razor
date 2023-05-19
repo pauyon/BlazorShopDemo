@@ -1,6 +1,5 @@
-﻿@page "/categories"
+﻿@page "/"
 @page "/{CategoryUrl}"
-@attribute [Authorize(Roles = "Administrator,User")]
 
 @inject ICategoryService CategoryService
 @inject IProductService ProductService
@@ -46,25 +45,18 @@ else
 
     protected override async Task OnParametersSetAsync()
     {
-        var authState = await authenticationState;
+        await ProductService.LoadProducts(CategoryUrl);
 
-        if (authState != null && authState.User.Identity.IsAuthenticated)
+        if (CategoryUrl != null)
         {
-            _user = authState.User.Identity.Name;
-
-            await ProductService.LoadProducts(CategoryUrl);
-
-            if (CategoryUrl != null)
-            {
-                _category = CategoryService.Categories.FirstOrDefault(c => c.Url.ToLower().Equals(CategoryUrl.ToLower()));
-            }
-            else
-            {
-                _category = null;
-            }
-
-            await StatsService.IncrementVisists();
-            await StatsService.GetVisits();
+            _category = CategoryService.Categories.FirstOrDefault(c => c.Url.ToLower().Equals(CategoryUrl.ToLower()));
         }
+        else
+        {
+            _category = null;
+        }
+
+        await StatsService.IncrementVisists();
+        await StatsService.GetVisits();
     }
 }

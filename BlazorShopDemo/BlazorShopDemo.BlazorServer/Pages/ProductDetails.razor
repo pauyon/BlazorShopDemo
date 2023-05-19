@@ -1,5 +1,4 @@
 ﻿@page "/product/{Id:int}"
-@attribute [Authorize(Roles = "Administrator,User")]
 
 @inject IProductService ProductService
 @inject ILocalStorageService LocalStorageService
